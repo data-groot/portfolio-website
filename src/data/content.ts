@@ -1,5 +1,4 @@
-// All site copy lives here. Anything wrapped in [EDIT: ...] is placeholder
-// text awaiting real details — search this file for "[EDIT" before shipping.
+// All site copy lives here — edit content in this file without touching components.
 
 export const site = {
   name: "Krishna Mihir Tatavarthi",
@@ -28,8 +27,9 @@ export const about = {
   statement:
     "I build AI systems that survive contact with production — LLM agents, RAG pipelines, and the data infrastructure underneath them.",
   paragraphs: [
-    "I'm finishing my MS in Computer Science at UMBC (GPA 3.93), where my trajectory has run from classical ML research into cloud-native AI engineering: shipping agentic workflows with LangGraph and LangChain, fine-tuning models with LoRA, and wiring it all into secure, role-based APIs.",
-    "Before the model there is always the data. I've built batch and streaming ETL/ELT pipelines on AWS, orchestrated with Airflow and dbt, and I care as much about observability and data quality as I do about model accuracy. My IEEE-published research on detecting machine-generated text sits right at the intersection I like most: rigorous ML with a real-world stake.",
+    "I'm finishing my MS in Computer Science at UMBC (GPA 3.93), where my trajectory has run from classical ML research into cloud-native AI engineering: shipping agentic workflows with LangGraph and LangChain and wiring it all into secure, role-based APIs.",
+    "Before the model there is always the data. I've built batch and streaming ETL/ELT pipelines on AWS, orchestrated with Airflow and dbt, and I care as much about observability and data quality as I do about model accuracy. At Date Maroon, improving Mode Analytics dashboards was my daily work — sitting with the real users who depended on them, hearing what slowed them down, and turning that feedback into faster queries and clearer reports.",
+    "My IEEE-published research on detecting machine-generated text sits right at the intersection I like most: rigorous ML with a real-world stake.",
   ],
   facts: [
     { label: "MS Computer Science", value: "UMBC · GPA 3.93 · 2026" },
@@ -55,7 +55,6 @@ export const skillCategories: SkillCategory[] = [
       "AI Agents",
       "RAG",
       "LLM APIs (OpenAI, Anthropic)",
-      "LLM Fine-Tuning (LoRA)",
       "Hugging Face",
       "PyTorch",
       "scikit-learn",
@@ -219,7 +218,8 @@ export const projects: Project[] = [
       "Published NLP research: an LSTM/BERT detector that separates machine-written text from human writing at 99.16% accuracy.",
     details: [
       "Tatavarthi, K. M., “Detection of Machine Generated Text Using LLMs,” IEEE International Conference on Electronics & Computing (ICEC), 2024.",
-      "Designed and trained an LSTM/BERT detection model achieving 99.16% accuracy distinguishing machine-generated from human-written content — a defense-relevant capability as LLM output floods the web. [EDIT: add DDoS-detection angle here if you want it mentioned]",
+      "Designed and trained an LSTM/BERT detection model achieving 99.16% accuracy distinguishing machine-generated from human-written content — a defense-relevant capability as LLM output floods the web.",
+      "The research also explored the network-security side of the same problem, applying ML-based classification to DDoS attack detection.",
     ],
     stack: ["Python", "PyTorch", "BERT", "LSTM", "NLP"],
     metrics: [{ value: "99.16%", label: "detection accuracy" }],
