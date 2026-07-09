@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette — near-black base, burnt orange accent, warm muted secondary */
+  --color-ink: #0a0a0f;
+  --color-surface: #111116;
+  --color-raise: #17171e;
+  --color-line: #24242c;
+  --color-ember: #ff5c1f;
+  --color-ember-soft: #ff8a5c;
+  --color-fog: #8d8878;
+  --color-cream: #ebe7de;
+
+  --font-display: var(--font-anton), "Arial Narrow", sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jbmono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 3px;
+}
+
+/* Hollow display type for editorial contrast */
+.text-outline {
+  -webkit-text-stroke: 1.5px var(--color-cream);
+  color: transparent;
+}
+
+.text-outline-ember {
+  -webkit-text-stroke: 1.5px var(--color-ember);
+  color: transparent;
+}
+
+/* Film-grain overlay, sits above everything, never intercepts input */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Portrait treatment: sweeping scanline + faint CRT line texture */
+.scanline {
+  pointer-events: none;
+  overflow: hidden;
+}
+.scanline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -30%;
+  height: 30%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 92, 31, 0.22),
+    rgba(235, 231, 222, 0.08),
+    transparent
+  );
+  animation: scan-sweep 4.5s linear infinite;
+}
+
+@keyframes scan-sweep {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(433%);
+  }
+}
+
+.crt-lines {
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(10, 10, 15, 0.18) 0px,
+    rgba(10, 10, 15, 0.18) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanline::before {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ember);
+}
