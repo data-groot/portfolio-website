@@ -23,10 +23,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://krishnamihir.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${site.name} — ${site.role}`,
+  title: `${site.name} · ${site.role}`,
   description: site.description,
   openGraph: {
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} · ${site.role}`,
     description: site.description,
     url: siteUrl,
     siteName: site.name,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} · ${site.role}`,
     description: site.description,
   },
 };

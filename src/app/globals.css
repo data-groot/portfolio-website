@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette — near-black base, burnt orange accent, warm muted secondary */
+  /* Palette: near-black base, burnt orange accent, warm muted secondary */
   --color-ink: #0a0a0f;
   --color-surface: #111116;
   --color-raise: #17171e;
