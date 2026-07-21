@@ -125,8 +125,40 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "pipelinepulse",
+    id: "systematlas",
     index: "01",
+    title: "SystemAtlas AI",
+    tag: "AI engineering intelligence platform",
+    blurb:
+      "Indexes a whole codebase, its databases, and its datasets into one evidence-backed knowledge graph, then answers questions about how the system fits together with real file-and-line proof instead of LLM guesses.",
+    details: [
+      "Full-stack platform (Node.js, Express, React) that statically indexes JavaScript, TypeScript, and Python repositories, SQL schemas, and CSV datasets into a cross-layer knowledge graph, tracing any value across seven layers from a frontend component down to the exact database column, with file and line evidence on every hop.",
+      "Architected a multi-agent system (LangGraph, LangChain) where a supervisor routes each question to parallel specialist agents for repositories, architecture, and datasets, invoking typed tools validated by Zod schemas.",
+      "Cut hallucinations with a deliberately non-LLM verification agent that re-checks every claim against the static index before composing an answer, labeling any hop it cannot confirm as unverified rather than inventing it.",
+      "Deployed to production on Google Cloud Run (Docker, Artifact Registry, Secret Manager) with Firebase authentication and per-user isolated workspaces, engineered safe by construction: a read-only single-SELECT SQL gate, read-only database connections, and sandboxed upload handling.",
+    ],
+    stack: [
+      "Node.js",
+      "React",
+      "LangGraph",
+      "LangChain",
+      "Google Cloud Run",
+      "Firebase",
+      "Docker",
+    ],
+    metrics: [
+      { value: "7", label: "layers traced end to end" },
+      { value: "3", label: "parallel specialist agents" },
+      { value: "0", label: "unverified hops passed as fact" },
+    ],
+    link: {
+      label: "View on GitHub",
+      href: "https://github.com/data-groot/System-Atlas-AI",
+    },
+  },
+  {
+    id: "pipelinepulse",
+    index: "02",
     title: "PipelinePulse",
     tag: "Multi-tenant ETL observability platform",
     blurb:
@@ -157,7 +189,7 @@ export const projects: Project[] = [
   },
   {
     id: "pulsar",
-    index: "02",
+    index: "03",
     title: "Pulsar Classification",
     tag: "ML research · Graduate Research Assistant",
     blurb:
@@ -181,7 +213,7 @@ export const projects: Project[] = [
   },
   {
     id: "medical",
-    index: "03",
+    index: "04",
     title: "Pneumonia Detection",
     tag: "Deep learning · chest X-ray classification",
     blurb:
@@ -211,7 +243,7 @@ export const projects: Project[] = [
   },
   {
     id: "ieee",
-    index: "04",
+    index: "05",
     title: "Machine-Generated Text Detection",
     tag: "IEEE publication · ICEC 2024",
     blurb:
