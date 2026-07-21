@@ -39,14 +39,9 @@ export default function Portrait() {
             className="w-full grayscale brightness-110 contrast-110 transition-[filter,transform] duration-500 ease-out group-hover:scale-[1.03] group-hover:grayscale-0 group-hover:brightness-100 group-focus-visible:scale-[1.03] group-focus-visible:grayscale-0 group-focus-visible:brightness-100"
           />
 
-          {/* ember tint — mix-blend-color keeps the photo's light/dark, only shifts hue */}
+          {/* subtle vignette for depth (neutral, no color cast) */}
           <div
-            className="pointer-events-none absolute inset-0 bg-ember opacity-90 mix-blend-color transition-opacity duration-500 group-hover:opacity-0 group-focus-visible:opacity-0"
-            aria-hidden="true"
-          />
-          {/* subtle vignette for depth */}
-          <div
-            className="pointer-events-none absolute inset-0 bg-radial from-transparent to-ink/50"
+            className="pointer-events-none absolute inset-0 bg-radial from-transparent to-ink/40"
             aria-hidden="true"
           />
           {/* scanline sweep */}
