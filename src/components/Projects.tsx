@@ -94,21 +94,36 @@ export default function Projects() {
                                 </li>
                               ))}
                             </ul>
-                            {project.link ? (
-                              <a
-                                href={project.link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group/link mt-6 inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-ember"
-                              >
-                                {project.link.label}
-                                <span
-                                  className="transition-transform group-hover/link:translate-x-1"
-                                  aria-hidden="true"
-                                >
-                                  →
-                                </span>
-                              </a>
+                            {project.links?.length ? (
+                              <div className="mt-6 flex flex-wrap items-center gap-3">
+                                {project.links.map((link) => (
+                                  <a
+                                    key={link.href}
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`group/link inline-flex items-center gap-2 px-4 py-2.5 font-mono text-sm uppercase tracking-widest transition-colors ${
+                                      link.primary
+                                        ? "bg-ember text-ink hover:bg-ember-soft"
+                                        : "border border-line text-cream hover:border-ember hover:text-ember"
+                                    }`}
+                                  >
+                                    {link.primary ? (
+                                      <span
+                                        className="h-1.5 w-1.5 animate-pulse rounded-full bg-ink"
+                                        aria-hidden="true"
+                                      />
+                                    ) : null}
+                                    {link.label}
+                                    <span
+                                      className="transition-transform group-hover/link:translate-x-1"
+                                      aria-hidden="true"
+                                    >
+                                      →
+                                    </span>
+                                  </a>
+                                ))}
+                              </div>
                             ) : null}
                           </div>
 

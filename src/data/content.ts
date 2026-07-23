@@ -120,7 +120,7 @@ export type Project = {
   details: string[];
   stack: string[];
   metrics: { value: string; label: string }[];
-  link?: { label: string; href: string };
+  links?: { label: string; href: string; primary?: boolean }[];
 };
 
 export const projects: Project[] = [
@@ -151,10 +151,17 @@ export const projects: Project[] = [
       { value: "3", label: "parallel specialist agents" },
       { value: "0", label: "unverified hops passed as fact" },
     ],
-    link: {
-      label: "View on GitHub",
-      href: "https://github.com/data-groot/System-Atlas-AI",
-    },
+    links: [
+      {
+        label: "Live demo",
+        href: "https://systematlas-134802582349.us-central1.run.app/",
+        primary: true,
+      },
+      {
+        label: "View on GitHub",
+        href: "https://github.com/data-groot/System-Atlas-AI",
+      },
+    ],
   },
   {
     id: "pipelinepulse",
@@ -182,10 +189,17 @@ export const projects: Project[] = [
       { value: "<10s", label: "failure detection" },
       { value: "<200ms", label: "event latency" },
     ],
-    link: {
-      label: "View on GitHub",
-      href: "https://github.com/data-groot/PipelinePulse",
-    },
+    links: [
+      {
+        label: "Live demo",
+        href: "https://pipelinepulse-web-hdnfdhiheq-uc.a.run.app/",
+        primary: true,
+      },
+      {
+        label: "View on GitHub",
+        href: "https://github.com/data-groot/PipelinePulse",
+      },
+    ],
   },
   {
     id: "pulsar",
@@ -206,10 +220,12 @@ export const projects: Project[] = [
       { value: "0.97", label: "ROC-AUC" },
       { value: "91%", label: "accuracy on independent data" },
     ],
-    link: {
-      label: "View on GitHub",
-      href: "https://github.com/data-groot/pulsar-star-prediction-service",
-    },
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/data-groot/pulsar-star-prediction-service",
+      },
+    ],
   },
   {
     id: "medical",
@@ -236,10 +252,12 @@ export const projects: Project[] = [
       { value: "0.9949", label: "AUC-ROC" },
       { value: "5k+", label: "chest X-rays" },
     ],
-    link: {
-      label: "View on GitHub",
-      href: "https://github.com/data-groot/Pneumonia-Detection-Deep-Learning",
-    },
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/data-groot/Pneumonia-Detection-Deep-Learning",
+      },
+    ],
   },
   {
     id: "ieee",
@@ -255,10 +273,13 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "PyTorch", "BERT", "LSTM", "NLP"],
     metrics: [{ value: "99.16%", label: "detection accuracy" }],
-    link: {
-      label: "Read on IEEE Xplore",
-      href: "https://ieeexplore.ieee.org/document/10837481",
-    },
+    links: [
+      {
+        label: "Read on IEEE Xplore",
+        href: "https://ieeexplore.ieee.org/document/10837481",
+        primary: true,
+      },
+    ],
   },
 ];
 
