@@ -33,7 +33,7 @@ export const about = {
   ],
   facts: [
     { label: "MS Computer Science", value: "UMBC · GPA 3.93 · 2026" },
-    { label: "Research", value: "IEEE-published, NLP & ML" },
+    { label: "Research", value: "2 papers published · IEEE, IJARESM" },
     { label: "Based in", value: "Baltimore, MD" },
     { label: "Focus", value: "LLM systems · Data platforms · Cloud" },
   ],
@@ -277,6 +277,28 @@ export const projects: Project[] = [
       {
         label: "Read on IEEE Xplore",
         href: "https://ieeexplore.ieee.org/document/10837481",
+        primary: true,
+      },
+    ],
+  },
+  {
+    id: "fraud",
+    index: "06",
+    title: "Health Insurance Fraud Detection",
+    tag: "Publication · IJARESM 2023",
+    blurb:
+      "Published research applying machine learning to health insurance claims, surfacing the anomalous provider billing behavior that signals fraud.",
+    details: [
+      "Tatavarthi, K. M. (co-author), “Fraud Detection in Health Insurance Claims Using ML,” International Journal of All Research Education & Scientific Methods (IJARESM), Vol. 11, Issue 11, 2023, pp. 1740–1745.",
+      "Applied supervised classification over claims data to flag providers whose billing patterns deviate from their peers, targeting the fraudulent claims that drive up costs across the healthcare system.",
+      "Covered the full applied pipeline: cleaning and encoding messy claims records, engineering provider-level behavioral features, and evaluating models on heavily imbalanced data where genuine fraud is rare.",
+    ],
+    stack: ["Python", "scikit-learn", "Pandas", "Classification"],
+    metrics: [{ value: "IJARESM", label: "Vol. 11, Issue 11 · 2023" }],
+    links: [
+      {
+        label: "Read the paper",
+        href: "https://www.ijaresm.com/uploaded_files/document_file/Harsha_Rajendraxv9A.pdf",
         primary: true,
       },
     ],
